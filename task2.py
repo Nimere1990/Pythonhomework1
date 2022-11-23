@@ -6,26 +6,8 @@
 # y = int(input("Введите y: \n"))
 # z = int(input("Введите z: \n"))
 
-print("Для проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z) введите данные в диапазоне от 0 до 1")
-x = int(input("Введите X: \n"))
-y = int(input("Введите Y: \n"))
-z = int(input("Введите Z: \n"))
-
-if x == 0 and y == 0 and z == 0:
-    print("Утверждение истинно")
-elif x == 1 and y == 0 and z == 0:
-    print("Утверждение ложно")
-elif x == 1 and y == 1 and z == 0:
-    print("Утверждение ложно")
-elif x == 1 and y == 1 and z == 1:
-    print("Утверждение ложно")
-elif x == 0 and y == 1 and z == 0:
-    print("Утверждение ложно")
-elif x == 0 and y == 1 and z == 1:
-    print("Утверждение ложно")
-elif x == 0 and y == 0 and z == 1:
-    print("Утверждение ложно")
-elif x == 1 and y == 0 and z == 1:
-    print("Утверждение ложно")
-else:
-    print("Введены некорректные данные")
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            if not (x or y or z) == (not x and not y and not z):
+                print(f'Утверждение ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z истинно при x = {x}, y={y}, z={z}')
